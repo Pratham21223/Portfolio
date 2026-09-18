@@ -1,0 +1,87 @@
+{
+  "codeforces": {
+    "handle": "Pratham2123",
+    "rating": 1287,
+    "maxRating": 1287,
+    "rank": "pupil",
+    "maxRank": "pupil",
+    "contests": 40,
+    "history": [
+      {
+        "x": "1",
+        "y": 1168
+      },
+      {
+        "x": "2",
+        "y": 1160
+      },
+      {
+        "x": "3",
+        "y": 1204
+      },
+      {
+        "x": "4",
+        "y": 1165
+      },
+      {
+        "x": "5",
+        "y": 1179
+      },
+      {
+        "x": "6",
+        "y": 1152
+      },
+      {
+        "x": "7",
+        "y": 1154
+      },
+      {
+        "x": "8",
+        "y": 1208
+      },
+      {
+        "x": "9",
+        "y": 1232
+      },
+      {
+        "x": "10",
+        "y": 1246
+      },
+      {
+        "x": "11",
+        "y": 1271
+      },
+      {
+        "x": "12",
+        "y": 1287
+      }
+    ]
+  },
+  "codechef": {
+    "handle": "generous_hand",
+    "rating": 1488,
+    "maxRating": 1503,
+    "stars": 2
+  },
+  "leetcode": {
+    "handle": "Pratham3004",
+    "solved": 57,
+    "easy": 36,
+    "medium": 19,
+    "hard": 2
+  },
+  "github": {
+    "handle": "Pratham21223",
+    "repos": 14,
+    "stars": 1,
+    "followers": 7,
+    "contributions": 0
+  },
+  "static": {
+    "problemsSolved": 600,
+    "hackathons": 6,
+    "projects": 3,
+    "cgpa": 9.04
+  },
+  "updatedAt": "2026-09-16T13:35:09.797Z"
+}

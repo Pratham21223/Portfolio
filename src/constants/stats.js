@@ -1,0 +1,45 @@
+export const fallbackStats = {
+  codeforces: {
+    handle: "Pratham2123",
+    rating: 1277,
+    maxRating: 1277,
+    rank: "Pupil",
+    maxRank: "Pupil",
+    contests: 12,
+    solved: 0,
+    history: [
+      { x: "1", y: 920 },
+      { x: "2", y: 1010 },
+      { x: "3", y: 1085 },
+      { x: "4", y: 1140 },
+      { x: "5", y: 1210 },
+      { x: "6", y: 1277 },
+    ],
+  },
+  codechef: {
+    handle: "generous_hand",
+    rating: 1503,
+    maxRating: 1503,
+    stars: 2,
+  },
+  leetcode: {
+    handle: "Pratham3004",
+    solved: 600,
+    easy: 210,
+    medium: 300,
+    hard: 90,
+  },
+  github: {
+    handle: "Pratham21223",
+    repos: 18,
+    stars: 24,
+    contributions: 0,
+    followers: 12,
+  },
+  static: {
+    problemsSolved: 600,
+    hackathons: 6,
+    projects: 3,
+    cgpa: 9.04,
+  },
+};

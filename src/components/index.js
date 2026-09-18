@@ -1,0 +1,10 @@
+export { default as MenuBar } from "./MenuBar";
+export { default as Dock } from "./Dock";
+export { default as Hero } from "./Hero";
+export { default as Background } from "./Background";
+export { default as BootScreen } from "./BootScreen";
+export { default as DesktopFolders } from "./DesktopFolders";
+export { default as ContextMenu } from "./ContextMenu";
+export { default as Spotlight } from "./Spotlight";
+export { default as Lucide } from "./icons";
+export { default as WindowFrame } from "./window/Frame";
