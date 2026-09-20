@@ -1,4 +1,4 @@
-import {fallbackStats} from "#constants/stats";
+import { fallbackStats } from "#constants/stats";
 
 export const profile = {
   name: "Pratham Kataria",
@@ -9,7 +9,17 @@ export const profile = {
   location: "Mumbai, India",
   education: "B.Tech Information Technology, DJSCE (2025–2029)",
   cgpa: "9.04",
+   github: "https://github.com/Pratham21223",
 };
+
+export const interests = [
+  "Scalable backends",
+  "Distributed systems",
+  "RAG applications",
+  "Developer tools",
+  "Full-stack products",
+  "Competitive programming",
+];
 
 export const roles = ["Competitive Programmer", "Full-Stack Developer"];
 
@@ -145,8 +155,52 @@ export const projects = [
       "Ollama Runtime",
       "Vector Store",
     ],
-    links: { github: "https://github.com/Pratham21223", demo: "https://palimind-demo.vercel.app" },
+    links: {
+      github: "https://github.com/Pratham21223/Palimind",
+      demo: "https://www.youtube.com/watch?v=29WVJVdce_I&feature=youtu.be",
+    },
     accent: "from-emerald-500 to-cyan-500",
+  },
+  {
+    id: "mahalaxmi-gems",
+    cat: "web",
+    name: "Mahalaxmi Gems",
+    tagline: "Production-Grade Gemstone E-Commerce Platform",
+    description:
+      "A full-stack e-commerce platform built for a real gemstone business with secure payments, server-authoritative inventory management, advanced product discovery, admin operations, and production-grade backend architecture.",
+    tech: [
+      "React 19",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Razorpay",
+      "Tailwind CSS",
+      "Docker",
+    ],
+    metrics: [
+      { label: "Payments", value: "Razorpay" },
+      { label: "Architecture", value: "Server-authoritative" },
+      { label: "Security", value: "Production-grade" },
+    ],
+    features: [
+      "Advanced gemstone catalog with filtering, search, sorting and pagination",
+      "Server-authoritative pricing and inventory validation",
+      "Atomic inventory reservation preventing overselling",
+      "Razorpay payment integration with HMAC-verified webhooks",
+      "Admin dashboard for products, categories, orders and customer inquiries",
+      "Wishlist, reviews, guest checkout and order tracking system",
+    ],
+    architecture: [
+      "React + TypeScript",
+      "Express REST API",
+      "MongoDB",
+      "Razorpay",
+    ],
+    links: {
+      github: "https://github.com/Pratham21223/MahalaxmiGems",
+    },
+    accent: "from-yellow-500 via-amber-500 to-orange-500",
   },
   {
     id: "aerohacks",
@@ -181,14 +235,17 @@ export const projects = [
       "MongoDB",
       "Hugging Face Inference",
     ],
-    links: { github: "https://github.com/Pratham21223", demo: "https://aerohacks-demo.vercel.app" },
+    links: {
+      github: "https://github.com/Pratham21223/Aerohacks",
+      demo: "https://www.youtube.com/watch?v=fBzEKBCb0sM",
+    },
     accent: "from-sky-500 to-indigo-500",
   },
   {
     id: "fintrack",
     cat: "web",
     name: "Fintrack",
-    tagline: "Finance Analytics Dashboard",
+    tagline: "Finance Tracker Dashboard",
     description:
       "A finance dashboard with role-based access control, analytics visualizations, secure APIs, and protected routes for Admin, Analyst, and Viewer roles.",
     tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Recharts", "RBAC"],
@@ -204,42 +261,107 @@ export const projects = [
       "Granular permission system",
     ],
     architecture: ["React SPA", "Express API", "MongoDB", "Recharts"],
-    links: { github: "https://github.com/Pratham21223", demo: "https://fintrack-demo.vercel.app" },
+    links: {
+      github: "https://github.com/Pratham21223/Fintrack",
+      demo: "https://fintrack-docs.vercel.app/",
+    },
     accent: "from-violet-500 to-purple-500",
+  },
+  {
+    id: "notedeck",
+    cat: "web",
+    name: "NoteDeck",
+    tagline: "AI-Powered MERN Notes Application",
+    description:
+      "A full-stack MERN notes application featuring JWT authentication, secure user-specific note management, AI-powered note generation with Gemini, debounced search, and cloud deployment.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Gemini AI",
+      "Tailwind CSS",
+    ],
+    metrics: [
+      { label: "Auth", value: "JWT + bcrypt" },
+      { label: "AI", value: "Gemini 2.5 Flash" },
+      { label: "Deployment", value: "Vercel" },
+    ],
+    features: [
+      "Secure JWT authentication with protected frontend and backend routes",
+      "Full CRUD notes management with user-specific authorization",
+      "AI-powered note generation using Google Gemini",
+      "Debounced search with URL-based filtering",
+      "Responsive dashboard with smooth animations",
+      "Production-ready cloud deployment on Vercel",
+    ],
+    architecture: [
+      "React Frontend",
+      "Express API",
+      "MongoDB Database",
+      "Gemini AI Service",
+    ],
+    links: {
+      github: "https://github.com/Pratham21223/NoteDeck",
+      demo: "https://notedeck-notes.vercel.app",
+    },
+    accent: "from-amber-500 to-orange-500",
   },
 ];
 
-export const skills = [
-  { name: "C++", level: 92, category: "Languages" },
-  { name: "Python", level: 88, category: "Languages" },
-  { name: "JavaScript", level: 90, category: "Languages" },
-  { name: "TypeScript", level: 82, category: "Languages" },
-  { name: "Java", level: 75, category: "Languages" },
-  { name: "Node.js", level: 90, category: "Backend" },
-  { name: "Express.js", level: 88, category: "Backend" },
-  { name: "REST APIs", level: 92, category: "Backend" },
-  { name: "Redis", level: 70, category: "Backend" },
-  { name: "PostgreSQL", level: 76, category: "Databases" },
-  { name: "MongoDB", level: 85, category: "Databases" },
-  { name: "React", level: 86, category: "Frontend" },
-  { name: "Next.js", level: 74, category: "Frontend" },
-  { name: "Tailwind CSS", level: 88, category: "Frontend" },
-  { name: "RAG", level: 84, category: "GenAI" },
-  { name: "LLM Applications", level: 80, category: "GenAI" },
-  { name: "Agentic Workflows", level: 78, category: "GenAI" },
-  { name: "System Design", level: 82, category: "Engineering" },
-  { name: "Docker", level: 72, category: "Engineering" },
-  { name: "Git", level: 90, category: "Engineering" },
-];
+export const skills = {
+  Languages: [
+    { name: "C++", strong: true },
+    { name: "Python", strong: true },
+    { name: "JavaScript", strong: true },
+    { name: "TypeScript", strong: false },
+    { name: "Java", strong: false },
+    { name: "SQL", strong: true },
+    { name: "Bash", strong: true },
+  ],
+  Backend: [
+    { name: "Node.js", strong: true },
+    { name: "Express.js", strong: true },
+    { name: "REST APIs", strong: true },
+    { name: "Redis", strong: false },
+    { name: "Celery", strong: false },
+    { name: "FastAPI", strong: false },
+  ],
+  Databases: [
+    { name: "PostgreSQL", strong: false },
+    { name: "MongoDB", strong: true },
+  ],
+  Frontend: [
+    { name: "React", strong: true },
+    { name: "Next.js", strong: false },
+    { name: "Tailwind CSS", strong: true },
+  ],
+  GenAI: [
+    { name: "RAG", strong: false },
+    { name: "Vector Databases", strong: false },
+    { name: "AI Integrations", strong: true },
+    { name: "Prompt Engineering", strong: true },
+    { name: "Agentic Workflows", strong: false },
+  ],
+  Concepts: [
+    { name: "Data Structures & Algorithms", strong: true },
+    { name: "Competitive Programming", strong: true },
+    { name: "System Design", strong: true },
+    { name: "Database Systems", strong: false },
+    { name: "Operating Systems", strong: false },
+    { name: "Web Scraping", strong: false },
+  ],
+  DevOps: [
+    { name: "Git", strong: true },
+    { name: "GitHub", strong: true },
+    { name: "Docker", strong: false },
+    { name: "Linux", strong: true },
+    { name: "Vercel", strong: true },
+    { name: "Postman", strong: true },
+  ],
+};
 
-export const skillCategories = [
-  "Languages",
-  "Backend",
-  "Databases",
-  "Frontend",
-  "GenAI",
-  "Engineering",
-];
 
 export const systemDesign = [
   {
@@ -302,67 +424,66 @@ export const systemDesign = [
 
 export const timeline = [
   {
-    year: "2025",
-    title: "Started B.Tech in IT @ DJSCE",
+    year: "Jun 2025",
+    title: "JEE Journey",
     detail:
-      "Began Information Technology at D. J. Sanghvi College of Engineering.",
+      "Scored 97.3 percentile in JEE Main and secured AIR 18k in JEE Advanced.",
   },
-  {
-    year: "2025",
-    title: "First Hackathon Win",
-    detail:
-      "Winner at Foundance Mumbai Hackathon — shipped a product under pressure.",
-  },
-  {
-    year: "2025",
-    title: "Crossed 600 CP Problems",
-    detail: "Reached Codeforces Pupil (1277) and CodeChef 2★ (1503).",
-  },
-  {
-    year: "2026",
-    title: "Deep into AI Systems",
-    detail:
-      "Building Palimind — a local-first AI OS with RAG, agents, and OCR.",
-  },
-  {
-    year: "2026",
-    title: "Backend & System Design Focus",
-    detail:
-      "Scaling MERN systems, Redis caching, queues, and event-driven architecture.",
-  },
-];
 
-export const codeSnippets = [
   {
-    lang: "python",
-    title: "rag_retrieval.py",
-    code: `def retrieve(query, top_k=5):
-    q = embed(query)
-    scores = index.similarity(q, top_k)
-    ctx = [doc.text for doc in scores]
-    return synthesize(query, ctx)`,
+    year: "Aug 2025",
+    title: "Started B.Tech IT @ DJSCE",
+    detail:
+      "Joined DJSCE with a strong focus on software engineering and competitive programming.",
   },
+
   {
-    lang: "js",
-    title: "auth.middleware.js",
-    code: `export const auth = (roles = []) =>
-  (req, res, next) => {
-    const t = verify(req.token);
-    if (!roles.includes(t.role))
-      return res.status(403).end();
-    req.user = t; next();
-  };`,
+    year: "Sep 2025",
+    title: "First Hackathon Victory",
+    detail:
+      "Won Foundance Mumbai Hackathon 2025, building and shipping a complete solution under intense time constraints.", 
   },
+
   {
-    lang: "cpp",
-    title: "dijkstra.cpp",
-    code: `while (!pq.empty()) {
-  auto [d, u] = pq.top(); pq.pop();
-  if (d > dist[u]) continue;
-  for (auto [v, w] : g[u])
-    if (dist[u] + w < dist[v])
-      pq.push({dist[v] = dist[u] + w, v});
-}`,
+    year: "Dec 2025",
+    title: "ADAPPT 4.0 Runner-Up",
+    detail:
+      "Secured Second Runner-Up position at ADAPPT 4.0 Hackathon among strong student teams.", 
+  },
+
+  {
+    year: "Feb 2026",
+    title: "Top 28 at Blitz Cup",
+    detail:
+      "Finished as a Top 28 Finalist at Blitz Cup, SPIT.",
+  },
+
+  {
+    year: "Mar 2026",
+    title: "Competitive Programming Milestone",
+    detail:
+      "Reached Pupil on Codeforces and 2★ on CodeChef", 
+  },
+
+  {
+    year: "Apr 2026",
+    title: "Code Uncode Finalist",
+    detail:
+      "Bagged a rank 70 out of 1600+ participants, prestigious competitive programming contest held at Mumbai.",
+  },
+
+  {
+    year: "Aug 2026",
+    title: "International Hackathon Finalist",
+    detail:
+      "Finished in the Top 60 out of 10,000+ teams at the Zuup Faraway International Hackathon.", 
+  },
+
+  {
+    year: "Present",
+    title: "Road to Specialist & System Design Mastery",
+    detail:
+      "Grinding competitive programming, backend engineering, distributed systems, Redis, Docker, and scalable system design.",
   },
 ];
 
@@ -393,7 +514,12 @@ export const contactCopy = {
 // ---- Competitive programming ----
 
 export const cpPlatforms = [
-  { key: "codeforces", name: "Codeforces", icon: "codeforces", color: "#1f8acb" },
+  {
+    key: "codeforces",
+    name: "Codeforces",
+    icon: "codeforces",
+    color: "#1f8acb",
+  },
   { key: "codechef", name: "CodeChef", icon: "codechef", color: "#5b4638" },
   { key: "leetcode", name: "LeetCode", icon: "leetcode", color: "#ffa116" },
 ];
