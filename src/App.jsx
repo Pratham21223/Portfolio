@@ -6,7 +6,6 @@ import {
   Dock,
   Hero,
   BootScreen,
-  DesktopFolders,
   ContextMenu,
   Spotlight,
 } from "#components";
@@ -74,7 +73,6 @@ const App = () => {
         <>
           <MenuBar />
           <Hero />
-          <DesktopFolders />
           <Dock />
           <ContextMenu />
           <Spotlight />

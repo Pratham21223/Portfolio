@@ -1,3 +1,5 @@
+import {fallbackStats} from "#constants/stats";
+
 export const profile = {
   name: "Pratham Kataria",
   title: "Competitive Programmer & Backend Engineer",
@@ -372,7 +374,7 @@ export const heroCode = `
   const name: "${profile.name}",
   const role : "Problem Solver",
   const interests: { "CP", "System Design", "RAG", "LLMs" },
-  const ratings = { cf: "1287", cc: "1503" };
+  const ratings = { cf: "${fallbackStats.codeforces.maxRating}", cc: "${fallbackStats.codechef.maxRating}" };
   const beyondCode = { "Spirituality","Cricket" };
 
   const mantra = "Eat. Sleep. Code. Repeat." ;)
