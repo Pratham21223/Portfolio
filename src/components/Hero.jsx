@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useCallback, useEffect, useState } from "react";
+import { motion, MotionConfig } from "framer-motion";
 import { profile, heroCode, heroTermPath, heroCopy, heroWords } from "#constants/content";
-
+import {fallbackStats} from "#constants/stats";
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 // Ordered token rules — first match at a position wins, so semantic strings
@@ -22,11 +22,11 @@ const TOKENS = [
   { re: /"RAG"/, cls: "font-medium text-emerald-300" },
   { re: /"LLMs"/, cls: "font-medium text-fuchsia-400" },
   {
-    re: /"1287"/,
+    re: /`{${fallbackStats.codeforces.maxRating}`/,
     cls: "font-semibold text-emerald-400",
   },
   {
-    re: /"1503"/,
+    re: /`{${fallbackStats.codechef.maxRating}`/,
     cls: "font-semibold text-amber-300",
   },
   { re: /"Spirituality"/, cls: "font-medium text-purple-300" },
@@ -133,101 +133,177 @@ const Planets = () => (
   </div>
 );
 
-const TypedCode = () => {
-  const [count, setCount] = useState(0);
-  const done = count >= heroCode.length;
+const PRE_CLASS =
+  "col-start-1 row-start-1 whitespace-pre-wrap break-words px-5 py-4 text-left font-mono text-[13px] leading-relaxed";
+
+const MIN_CHARS_PER_SECOND = 100;
+const MAX_TYPING_SECONDS = 5; // long content speeds up instead of making people wait
+const TYPING_DELAY_MS = 600; // let the name, role and card finish entering first
+
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+/*
+ * Time-based typewriter. Same speed on every device, never longer than
+ * MAX_TYPING_SECONDS, and `finish()` completes it instantly. Setting
+ * `count` to `total` flips `done`, which cleans the effects up.
+ */
+const useTypewriter = (total) => {
+  const [count, setCount] = useState(() => (prefersReducedMotion() ? total : 0));
+  const done = count >= total;
+  const finish = useCallback(() => setCount(total), [total]);
 
   useEffect(() => {
     if (done) return undefined;
-    const t = setTimeout(() => setCount((c) => c + 1), count === 0 ? 1200 : 20);
-    return () => clearTimeout(t);
-  }, [count, done]);
+
+    const cps = Math.max(MIN_CHARS_PER_SECOND, total / MAX_TYPING_SECONDS);
+    let raf;
+    let startedAt = 0;
+
+    const tick = (now) => {
+      const next = Math.min(total, Math.floor(((now - startedAt) / 1000) * cps));
+      setCount((c) => (next > c ? next : c));
+      if (next < total) raf = requestAnimationFrame(tick);
+    };
+
+    const timer = setTimeout(() => {
+      startedAt = performance.now();
+      raf = requestAnimationFrame(tick);
+    }, TYPING_DELAY_MS);
+
+    return () => {
+      clearTimeout(timer);
+      cancelAnimationFrame(raf);
+    };
+  }, [done, total]);
+
+  /* Escape skips from anywhere on the page. */
+  useEffect(() => {
+    if (done) return undefined;
+    const onKey = (event) => {
+      if (event.key === "Escape") finish();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [done, finish]);
+
+  return { count, done, finish };
+};
+
+const TypedCode = ({ count, done, onSkip }) => (
+  <div
+    className={`grid grid-cols-1 ${done ? "" : "cursor-pointer"}`}
+    onClick={done ? undefined : onSkip}
+  >
+    {/*
+      Invisible copy of the full text. It reserves the card's final height
+      from the first frame, so the name and role above never move while
+      the code types. Both blocks share one grid cell and identical
+      wrapping, so the typed text lands exactly on top of it.
+    */}
+    <pre aria-hidden className={`${PRE_CLASS} invisible`}>
+      {heroCode}
+    </pre>
+
+    {/* Screen readers get the full text once, not letter by letter. */}
+    <pre className="sr-only">{heroCode}</pre>
+
+    <pre aria-hidden className={PRE_CLASS}>
+      {highlight(heroCode.slice(0, count))}
+      <span className="typing-cursor" />
+    </pre>
+  </div>
+);
+
+const Terminal = () => {
+  const { count, done, finish } = useTypewriter(heroCode.length);
 
   return (
     <motion.div
-      initial={{ height: 0 }}
-      animate={{ height: "auto" }}
-      transition={{ height: { type: "spring", stiffness: 260, damping: 30 } }}
-      style={{ overflow: "hidden" }}
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      className="glass-strong overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/5 transition-shadow duration-300 hover:shadow-[0_24px_80px_-16px_rgba(139,92,246,0.3)]"
     >
-      <pre className="whitespace-pre-wrap break-words px-5 py-4 text-left font-mono text-[13px] leading-relaxed">
-        {highlight(heroCode.slice(0, count))}
-        <span className="typing-cursor" />
-      </pre>
+      <div className="group flex items-center gap-2 border-b border-[var(--glass-border-strong)] bg-black/25 px-4 py-3">
+        <span className="h-3 w-3 rounded-full bg-[#ff5f57] shadow-[0_0_6px_rgba(255,95,87,0.5)] transition-shadow duration-200 group-hover:shadow-[0_0_10px_rgba(255,95,87,0.85)]" />
+        <span className="h-3 w-3 rounded-full bg-[#febc2e] shadow-[0_0_6px_rgba(254,188,46,0.5)] transition-shadow duration-200 group-hover:shadow-[0_0_10px_rgba(254,188,46,0.85)]" />
+        <span className="h-3 w-3 rounded-full bg-[#28c840] shadow-[0_0_6px_rgba(40,200,64,0.5)] transition-shadow duration-200 group-hover:shadow-[0_0_10px_rgba(40,200,64,0.85)]" />
+        <span className="ml-3 font-mono text-xs font-medium text-cyan-300 transition-colors duration-200 group-hover:text-cyan-200">
+          {heroTermPath}
+        </span>
+
+        <div className="ml-auto flex items-center gap-2">
+          <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400 transition-colors duration-200 hover:bg-emerald-500/20 hover:text-emerald-300">
+            {heroCopy.shell}
+          </span>
+        </div>
+      </div>
+
+      <TypedCode count={count} done={done} onSkip={finish} />
     </motion.div>
   );
 };
 
-const Hero = () => (
+const HeroScene = () => (
   <section className="absolute inset-0 flex overflow-y-auto px-6 py-10 text-center">
     <Planets />
 
     <div className="relative z-10 m-auto flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="glass flex items-center gap-2.5 rounded-full px-4 py-1.5 font-mono text-[11px] tracking-wide text-[var(--text-muted)]"
+      >
+        <span className="h-2 w-2 rounded-full bg-emerald-400" />
+        {heroCopy.status}
+      </motion.div>
+      <div className="relative mt-7">
+        <div className="absolute left-1/2 top-1/2 -z-10 h-44 w-[36rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-400/20 to-violet-500/25 blur-[90px]" />
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="glass flex items-center gap-2.5 rounded-full px-4 py-1.5 font-mono text-[11px] tracking-wide text-[var(--text-muted)]"
+          transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="hero-name text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl xl:text-8xl"
         >
-          <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          {heroCopy.status}
-        </motion.div>
-        <div className="relative mt-7">
-          <div className="absolute left-1/2 top-1/2 -z-10 h-44 w-[36rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-500/20 via-cyan-400/20 to-violet-500/25 blur-[90px]" />
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="hero-name text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl xl:text-8xl"
-          >
-            {profile.name}
-          </motion.h1>
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-4 text-base font-medium tracking-wide text-[var(--text-muted)] sm:text-lg"
-        >
-          {heroWords.map((w, i) => (
-            <span key={w}>
-              {w}
-              {i < heroWords.length - 1 && (
-                <span className="accent-text mx-2 font-semibold">·</span>
-              )}
-            </span>
-          ))}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 32, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-9 w-[min(660px,92vw)]"
-        >
-          <div className="absolute -inset-4 -z-10 rounded-3xl bg-violet-500/10 blur-2xl" />
-          <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="glass-strong overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/5 transition-shadow duration-300 hover:shadow-[0_24px_80px_-16px_rgba(139,92,246,0.3)]"
-          >
-            <div className="group flex items-center gap-2 border-b border-[var(--glass-border-strong)] bg-black/25 px-4 py-3">
-              <span className="h-3 w-3 rounded-full bg-[#ff5f57] shadow-[0_0_6px_rgba(255,95,87,0.5)] transition-shadow duration-200 group-hover:shadow-[0_0_10px_rgba(255,95,87,0.85)]" />
-              <span className="h-3 w-3 rounded-full bg-[#febc2e] shadow-[0_0_6px_rgba(254,188,46,0.5)] transition-shadow duration-200 group-hover:shadow-[0_0_10px_rgba(254,188,46,0.85)]" />
-              <span className="h-3 w-3 rounded-full bg-[#28c840] shadow-[0_0_6px_rgba(40,200,64,0.5)] transition-shadow duration-200 group-hover:shadow-[0_0_10px_rgba(40,200,64,0.85)]" />
-              <span className="ml-3 font-mono text-xs font-medium text-cyan-300 transition-colors duration-200 group-hover:text-cyan-200">
-                {heroTermPath}
-              </span>
-              <span className="ml-auto rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 font-mono text-[10px] text-emerald-400 transition-colors duration-200 hover:bg-emerald-500/20 hover:text-emerald-300">
-                {heroCopy.shell}
-              </span>
-            </div>
-            <TypedCode />
-          </motion.div>
-        </motion.div>
+          {profile.name}
+        </motion.h1>
       </div>
-    </section>
+
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="mt-4 text-base font-medium tracking-wide text-[var(--text-muted)] sm:text-lg"
+      >
+        {heroWords.map((w, i) => (
+          <span key={w}>
+            {w}
+            {i < heroWords.length - 1 && (
+              <span className="accent-text mx-2 font-semibold">·</span>
+            )}
+          </span>
+        ))}
+      </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 32, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mt-9 w-[min(660px,92vw)]"
+      >
+        <div className="absolute -inset-4 -z-10 rounded-3xl bg-violet-500/10 blur-2xl" />
+        <Terminal />
+      </motion.div>
+    </div>
+  </section>
+);
+
+const Hero = () => (
+  <MotionConfig reducedMotion="user">
+    <HeroScene />
+  </MotionConfig>
 );
 
 export default Hero;

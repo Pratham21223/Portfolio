@@ -102,7 +102,7 @@ export const terminal = {
   footer: "zsh — 80×24",
   inputLabel: "Terminal input",
   welcome: [
-    { type: "text", value: "prathfolio Terminal v2.0" },
+    { type: "text", value: "Prathfolio Terminal" },
     { type: "text", value: "Type 'help' to see available commands." },
     { type: "text", value: "" },
   ],
