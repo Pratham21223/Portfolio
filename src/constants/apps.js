@@ -29,12 +29,12 @@ export const dockApps = [
     icon: "terminal",
     grad: "from-zinc-700 to-zinc-900",
   },
-  {
-    key: "activity",
-    name: "Activity Monitor",
-    icon: "activity",
-    grad: "from-emerald-500 to-teal-600",
-  },
+  // {
+  //   key: "activity",
+  //   name: "Activity Monitor",
+  //   icon: "activity",
+  //   grad: "from-emerald-500 to-teal-600",
+  // },
   {
     key: "skills",
     name: "Skills",
@@ -59,12 +59,12 @@ export const dockApps = [
     icon: "network",
     grad: "from-rose-500 to-pink-600",
   },
-  {
-    key: "aiprojects",
-    name: "AI Projects",
-    icon: "sparkles",
-    grad: "from-fuchsia-500 to-violet-600",
-  },
+  // {
+  //   key: "aiprojects",
+  //   name: "AI Projects",
+  //   icon: "sparkles",
+  //   grad: "from-fuchsia-500 to-violet-600",
+  // },
   {
     key: "achievements",
     name: "Achievements",

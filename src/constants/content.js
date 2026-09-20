@@ -207,44 +207,44 @@ export const projects = [
   },
 ];
 
-export const aiProjects = [
-  {
-    id: "palimind-rag",
-    name: "Multimodal RAG Engine",
-    category: "RAG Systems",
-    description:
-      "4-bit quantized embeddings powering retrieval across text, images, and screen captures with sub-second latency.",
-    icon: "database",
-    flow: ["Ingest", "Embed", "Index", "Retrieve", "Synthesize"],
-  },
-  {
-    id: "palimind-agents",
-    name: "Agent Swarm Orchestration",
-    category: "AI Agents",
-    description:
-      "Coordinated agents for email drafting, screen understanding, and task automation with a shared memory bus.",
-    icon: "bot",
-    flow: ["Plan", "Dispatch", "Execute", "Aggregate"],
-  },
-  {
-    id: "palimind-ocr",
-    name: "Screen-to-Text OCR",
-    category: "OCR",
-    description:
-      "Real-time OCR pipeline with vision-LLM Q&A over any on-screen content.",
-    icon: "scan",
-    flow: ["Capture", "OCR", "Contextualize", "Answer"],
-  },
-  {
-    id: "email-ai",
-    name: "AI Email Management",
-    category: "AI Workflows",
-    description:
-      "Multi-account sync with AI-drafted replies, categorization, and priority inbox automation.",
-    icon: "mail",
-    flow: ["Sync", "Classify", "Draft", "Send"],
-  },
-];
+// export const aiProjects = [
+//   {
+//     id: "palimind-rag",
+//     name: "Multimodal RAG Engine",
+//     category: "RAG Systems",
+//     description:
+//       "4-bit quantized embeddings powering retrieval across text, images, and screen captures with sub-second latency.",
+//     icon: "database",
+//     flow: ["Ingest", "Embed", "Index", "Retrieve", "Synthesize"],
+//   },
+//   {
+//     id: "palimind-agents",
+//     name: "Agent Swarm Orchestration",
+//     category: "AI Agents",
+//     description:
+//       "Coordinated agents for email drafting, screen understanding, and task automation with a shared memory bus.",
+//     icon: "bot",
+//     flow: ["Plan", "Dispatch", "Execute", "Aggregate"],
+//   },
+//   {
+//     id: "palimind-ocr",
+//     name: "Screen-to-Text OCR",
+//     category: "OCR",
+//     description:
+//       "Real-time OCR pipeline with vision-LLM Q&A over any on-screen content.",
+//     icon: "scan",
+//     flow: ["Capture", "OCR", "Contextualize", "Answer"],
+//   },
+//   {
+//     id: "email-ai",
+//     name: "AI Email Management",
+//     category: "AI Workflows",
+//     description:
+//       "Multi-account sync with AI-drafted replies, categorization, and priority inbox automation.",
+//     icon: "mail",
+//     flow: ["Sync", "Classify", "Draft", "Send"],
+//   },
+// ];
 
 export const skills = [
   { name: "C++", level: 92, category: "Languages" },

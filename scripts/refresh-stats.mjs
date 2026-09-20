@@ -10,56 +10,323 @@ const CC_HANDLE = "generous_hand";
 const LC_HANDLE = "Pratham3004";
 const GH_HANDLE = "Pratham21223";
 
+const sleep = (ms) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
 const json = async (url, headers = {}) => {
   const res = await fetch(url, { headers });
-  if (!res.ok) throw new Error(`${res.status} ${url}`);
-  return res.json();
+
+  if (!res.ok) {
+    throw new Error(`${res.status} ${url}`);
+  }
+
+  const data = await res.json();
+
+  if (data.status && data.status !== "OK") {
+    throw new Error(
+      `${data.comment ?? "API request failed"}`
+    );
+  }
+
+  return data;
 };
 
+const dateKey = (timestampSeconds) => {
+  return new Date(timestampSeconds * 1000)
+    .toISOString()
+    .slice(0, 10);
+};
+
+
+/* =========================================================
+   CODEFORCES
+========================================================= */
+
 const codeforces = async () => {
-  const info = await json(`https://codeforces.com/api/user.info?handles=${CF_HANDLE}`);
-  const rating = await json(`https://codeforces.com/api/user.rating?handle=${CF_HANDLE}`);
-  const u = info.result[0];
-  const contests = rating.result ?? [];
-  const history = contests.slice(-12).map((c, i) => ({
-    x: String(i + 1),
-    y: c.newRating,
+  const info = await json(
+    `https://codeforces.com/api/user.info?handles=${CF_HANDLE}`
+  );
+
+  const ratingData = await json(
+    `https://codeforces.com/api/user.rating?handle=${CF_HANDLE}`
+  );
+
+  /*
+   * Fetch submissions in pages so the heatmap is not limited
+   * to the first 10,000 submissions.
+   */
+
+  const PAGE_SIZE = 10000;
+
+  const submissions = [];
+
+  for (
+    let from = 1;
+    ;
+    from += PAGE_SIZE
+  ) {
+    const page = await json(
+      `https://codeforces.com/api/user.status?handle=${CF_HANDLE}&from=${from}&count=${PAGE_SIZE}`
+    );
+
+    const result = page.result ?? [];
+
+    submissions.push(...result);
+
+    if (result.length < PAGE_SIZE) {
+      break;
+    }
+
+    /*
+     * Avoid hammering the CF API.
+     */
+    await sleep(300);
+  }
+
+  const user = info.result?.[0];
+
+  if (!user) {
+    throw new Error(
+      `Codeforces user not found: ${CF_HANDLE}`
+    );
+  }
+
+
+  /* -------------------------------------------------------
+     Rating history
+  ------------------------------------------------------- */
+
+  const contests = ratingData.result ?? [];
+
+  const history = contests.map((contest) => ({
+    contestId: contest.contestId,
+    contestName: contest.contestName,
+
+    date:
+      contest.ratingUpdateTimeSeconds * 1000,
+
+    oldRating: contest.oldRating,
+    newRating: contest.newRating,
+
+    change:
+      contest.newRating -
+      contest.oldRating,
+
+    rank: contest.rank,
   }));
+
+
+  /* -------------------------------------------------------
+     Accepted problems
+  ------------------------------------------------------- */
+
+  const solvedMap = new Map();
+
+  for (const submission of submissions) {
+    if (submission.verdict !== "OK") {
+      continue;
+    }
+
+    if (!submission.problem) {
+      continue;
+    }
+
+    const problem =
+      submission.problem;
+
+    const problemKey = [
+      problem.contestId ?? "unknown",
+      problem.index ?? "unknown",
+    ].join("-");
+
+    /*
+     * Only count a problem once.
+     */
+    if (!solvedMap.has(problemKey)) {
+      solvedMap.set(problemKey, {
+        key: problemKey,
+
+        contestId:
+          problem.contestId ?? null,
+
+        index:
+          problem.index ?? null,
+
+        name:
+          problem.name ?? "Unknown",
+
+        rating:
+          problem.rating ?? null,
+
+        tags:
+          problem.tags ?? [],
+
+        timestamp:
+          submission.creationTimeSeconds,
+
+        date:
+          dateKey(
+            submission.creationTimeSeconds
+          ),
+      });
+    }
+  }
+
+
+  /* -------------------------------------------------------
+     Daily activity
+  ------------------------------------------------------- */
+
+  const activity = {};
+
+  for (const problem of solvedMap.values()) {
+    activity[problem.date] =
+      (activity[problem.date] ?? 0) + 1;
+  }
+
+
+  /* -------------------------------------------------------
+     Years available in the data
+  ------------------------------------------------------- */
+
+  const years = [
+    ...new Set(
+      Object.keys(activity).map(
+        (date) =>
+          new Date(date).getFullYear()
+      )
+    ),
+  ]
+    .sort((a, b) => b - a);
+
+
   return {
     handle: CF_HANDLE,
-    rating: u.rating ?? 0,
-    maxRating: u.maxRating ?? 0,
-    rank: u.rank ?? "unrated",
-    maxRank: u.maxRank ?? "unrated",
-    contests: contests.length,
+
+    rating: user.rating ?? 0,
+    maxRating: user.maxRating ?? 0,
+
+    rank:
+      user.rank ??
+      "unrated",
+
+    maxRank:
+      user.maxRank ??
+      "unrated",
+
+    contests:
+      contests.length,
+
     history,
+
+    solvedProblems:
+      [...solvedMap.values()],
+
+    activity,
+
+    years,
   };
 };
 
+
+/* =========================================================
+   CODECHEF
+========================================================= */
+
 const codechef = async () => {
-  const res = await fetch(`https://www.codechef.com/users/${CC_HANDLE}`);
-  if (!res.ok) throw new Error(`codechef ${res.status}`);
+  const res = await fetch(
+    `https://www.codechef.com/users/${CC_HANDLE}`
+  );
+
+  if (!res.ok) {
+    throw new Error(
+      `codechef ${res.status}`
+    );
+  }
+
   const html = await res.text();
-  const rating = Number(html.match(/rating-number[^>]*>\s*(\d+)/i)?.[1] ?? 0);
-  const maxRating = Number(html.match(/Highest Rating[^\d]*(\d+)/i)?.[1] ?? rating);
-  const parsedStars = Number(html.match(/(\d)★/)?.[1] ?? 0);
-  const stars = parsedStars || (rating >= 1400 ? 2 : rating >= 0 ? 1 : 0);
-  return { handle: CC_HANDLE, rating, maxRating, stars };
+
+  const rating = Number(
+    html.match(
+      /rating-number[^>]*>\s*(\d+)/i
+    )?.[1] ?? 0
+  );
+
+  const maxRating = Number(
+    html.match(
+      /Highest Rating[^\d]*(\d+)/i
+    )?.[1] ?? rating
+  );
+
+  const parsedStars = Number(
+    html.match(/(\d)★/)?.[1] ?? 0
+  );
+
+  const stars =
+    parsedStars ||
+    (rating >= 1400
+      ? 2
+      : rating >= 0
+        ? 1
+        : 0);
+
+  return {
+    handle: CC_HANDLE,
+    rating,
+    maxRating,
+    stars,
+  };
 };
+
+
+/* =========================================================
+   LEETCODE
+========================================================= */
 
 const leetcode = async () => {
   const query = {
-    query: `query($u: String!){ matchedUser(username:$u){ submitStats { acSubmissionNum { difficulty count } } } }`,
-    variables: { u: LC_HANDLE },
+    query: `
+      query($u: String!) {
+        matchedUser(username: $u) {
+          submitStats {
+            acSubmissionNum {
+              difficulty
+              count
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      u: LC_HANDLE,
+    },
   };
-  const res = await fetch("https://leetcode.com/graphql", {
-    method: "POST",
-    headers: { "content-type": "application/json", "user-agent": "Mozilla/5.0" },
-    body: JSON.stringify(query),
-  });
-  if (!res.ok) throw new Error(`leetcode ${res.status}`);
+
+  const res = await fetch(
+    "https://leetcode.com/graphql",
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "user-agent": "Mozilla/5.0",
+      },
+      body: JSON.stringify(query),
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error(
+      `leetcode ${res.status}`
+    );
+  }
+
   const data = await res.json();
-  const stats = data.data?.matchedUser?.submitStats?.acSubmissionNum ?? [];
+
+  const stats =
+    data.data?.matchedUser
+      ?.submitStats
+      ?.acSubmissionNum ?? [];
+
   return {
     handle: LC_HANDLE,
     solved: stats[0]?.count ?? 0,
@@ -69,59 +336,139 @@ const leetcode = async () => {
   };
 };
 
-const github = async () => {
-  const user = await json(`https://api.github.com/users/${GH_HANDLE}`);
-  const repos = await json(`https://api.github.com/users/${GH_HANDLE}/repos?per_page=100&type=owner`);
-  let contributions = 0;
-  if (process.env.GH_PAT) {
-    try {
-      const q = {
-        query: `query($l:String!){ user(login:$l){ contributionsCollection { contributionCalendar { totalContributions } } } }`,
-        variables: { l: GH_HANDLE },
-      };
-      const data = await json("https://api.github.com/graphql", {
-        "content-type": "application/json",
-        authorization: `bearer ${process.env.GH_PAT}`,
-      });
-      contributions = data.data?.user?.contributionsCollection?.contributionCalendar?.totalContributions ?? 0;
-    } catch {
-      contributions = 0;
-    }
-  }
-  return {
-    handle: GH_HANDLE,
-    repos: user.public_repos ?? repos.length,
-    stars: repos.reduce((a, r) => a + (r.stargazers_count ?? 0), 0),
-    followers: user.followers ?? 0,
-    contributions,
-  };
+
+/* =========================================================
+   GITHUB
+========================================================= */
+
+const ghGraphql = async (query, variables) => {
+  const data = await json("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `bearer ${process.env.GH_PAT}`,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+  if (data.errors) throw new Error(data.errors[0].message);
+  return data.data;
 };
+
+const githubActivity = async () => {
+  if (!process.env.GH_PAT) return { activity: {}, years: [], lastYear: 0 };
+
+  const { user } = await ghGraphql(
+    `query($l:String!){ user(login:$l){ contributionsCollection{ contributionYears } } }`,
+    { l: GH_HANDLE }
+  );
+  const years = user.contributionsCollection.contributionYears; // newest first
+
+  const activity = {};
+  for (const year of years) {
+    const d = await ghGraphql(
+      `query($l:String!,$from:DateTime!,$to:DateTime!){
+         user(login:$l){
+           contributionsCollection(from:$from,to:$to){
+             contributionCalendar{ weeks{ contributionDays{ date contributionCount } } }
+           }
+         }
+       }`,
+      { l: GH_HANDLE, from: `${year}-01-01T00:00:00Z`, to: `${year}-12-31T23:59:59Z` }
+    );
+    for (const week of d.user.contributionsCollection.contributionCalendar.weeks) {
+      for (const day of week.contributionDays) {
+        if (day.contributionCount > 0) activity[day.date] = day.contributionCount;
+      }
+    }
+    await sleep(200);
+  }
+
+  const cutoff = new Date(Date.now() - 365 * 86400000).toISOString().slice(0, 10);
+  const lastYear = Object.entries(activity)
+    .filter(([date]) => date >= cutoff)
+    .reduce((sum, [, n]) => sum + n, 0);
+
+  return { activity, years, lastYear };
+};
+
+/* =========================================================
+   MAIN
+========================================================= */
 
 const main = async () => {
   const out = {};
   const errors = [];
 
-  for (const [name, fn] of Object.entries({ codeforces, codechef, leetcode, github })) {
+  const providers = {
+    codeforces,
+    codechef,
+    leetcode,
+    github,
+  };
+
+  for (const [name, fn] of Object.entries(
+    providers
+  )) {
     try {
       out[name] = await fn();
+
       console.log(`✓ ${name}`);
     } catch (err) {
-      errors.push(`${name}: ${err.message}`);
-      console.error(`✗ ${name}: ${err.message}`);
+      const message =
+        err instanceof Error
+          ? err.message
+          : String(err);
+
+      errors.push(
+        `${name}: ${message}`
+      );
+
+      console.error(
+        `✗ ${name}: ${message}`
+      );
     }
   }
 
-  out.static = { problemsSolved: 600, hackathons: 6, projects: 3, cgpa: 9.04 };
-  out.updatedAt = new Date().toISOString();
+  out.static = {
+    problemsSolved:
+      out.codeforces
+        ?.solvedProblems
+        ?.length ?? 0,
 
-  mkdirSync(dirname(OUT), { recursive: true });
-  writeFileSync(OUT, JSON.stringify(out, null, 2) + "\n");
+    hackathons: 6,
+    projects: 3,
+    cgpa: 9.04,
+  };
+
+  out.updatedAt =
+    new Date().toISOString();
+
+  mkdirSync(
+    dirname(OUT),
+    {
+      recursive: true,
+    }
+  );
+
+  writeFileSync(
+    OUT,
+    JSON.stringify(out, null, 2) +
+      "\n"
+  );
 
   if (errors.length) {
-    console.log("\nPartial failure (some sources skipped):");
-    errors.forEach((e) => console.log("  -", e));
+    console.log(
+      "\nPartial failure:"
+    );
+
+    errors.forEach((error) =>
+      console.log("  -", error)
+    );
   }
-  console.log(`\nWrote ${OUT}`);
+
+  console.log(
+    `\nWrote ${OUT}`
+  );
 };
 
 main();
