@@ -19,12 +19,10 @@ import { desktopMenuItems } from "#constants/ui";
 const WIN_DEFS = [
   { key: "finder", C: lazy(() => import("#windows/Finder")) },
   { key: "terminal", C: lazy(() => import("#windows/Terminal")) },
-  { key: "activity", C: lazy(() => import("#windows/ActivityMonitor")) },
   { key: "skills", C: lazy(() => import("#windows/Skills")) },
   { key: "about", C: lazy(() => import("#windows/About")) },
   { key: "cp", C: lazy(() => import("#windows/cp/CP")) },
   { key: "sysdesign", C: lazy(() => import("#windows/SystemDesign")) },
-  { key: "aiprojects", C: lazy(() => import("#windows/AIProjects")) },
   { key: "achievements", C: lazy(() => import("#windows/Achievements")) },
   { key: "contact", C: lazy(() => import("#windows/Contact")) },
   { key: "resume", C: lazy(() => import("#windows/Resume")) },

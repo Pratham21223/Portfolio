@@ -46,7 +46,6 @@ export const windowTitles = {
   about: "About Me",
   cp: "Competitive Programming",
   sysdesign: "System Design",
-  aiprojects: "AI Projects",
   achievements: "Achievements",
   contact: "Contact",
   resume: "Resume.pdf",

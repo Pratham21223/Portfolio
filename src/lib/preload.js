@@ -12,9 +12,7 @@ const WINDOW_LOADERS = [
   () => import("#windows/Skills"),
   () => import("#windows/cp/CP"),
   () => import("#windows/SystemDesign"),
-  () => import("#windows/AIProjects"),
   () => import("#windows/Achievements"),
-  () => import("#windows/ActivityMonitor"),
   () => import("#windows/Resume"),
 ];
 

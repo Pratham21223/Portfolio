@@ -9,7 +9,6 @@ export const APP_WINDOWS = {
   about: { w: 820, h: 600 },
   cp: { w: 900, h: 620 },
   sysdesign: { w: 940, h: 620 },
-  aiprojects: { w: 860, h: 580 },
   achievements: { w: 720, h: 560 },
   contact: { w: 640, h: 560 },
   resume: { w: 720, h: 720 },
@@ -59,12 +58,6 @@ export const dockApps = [
     icon: "network",
     grad: "from-rose-500 to-pink-600",
   },
-  // {
-  //   key: "aiprojects",
-  //   name: "AI Projects",
-  //   icon: "sparkles",
-  //   grad: "from-fuchsia-500 to-violet-600",
-  // },
   {
     key: "achievements",
     name: "Achievements",

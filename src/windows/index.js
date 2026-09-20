@@ -1,11 +1,9 @@
 export { default as Finder } from "./Finder";
 export { default as Terminal } from "./Terminal";
-export { default as ActivityMonitor } from "./ActivityMonitor";
 export { default as Skills } from "./Skills";
 export { default as About } from "./About";
 export { default as CP } from "./cp/CP";
 export { default as SystemDesign } from "./SystemDesign";
-export { default as AIProjects } from "./AIProjects";
 export { default as Achievements } from "./Achievements";
 export { default as Contact } from "./Contact";
 export { default as Resume } from "./Resume";
