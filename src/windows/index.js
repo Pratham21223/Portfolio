@@ -3,7 +3,7 @@ export { default as Terminal } from "./Terminal";
 export { default as Skills } from "./Skills";
 export { default as About } from "./About";
 export { default as CP } from "./cp/CP";
-export { default as SystemDesign } from "./SystemDesign";
+export { default as SystemDesign } from "./dev/SystemDesign";
 export { default as Achievements } from "./Achievements";
 export { default as Contact } from "./Contact";
 export { default as Resume } from "./Resume";

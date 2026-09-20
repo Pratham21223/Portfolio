@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import WindowFrame from "#components/window/Frame";
 import Lucide from "#components/icons";
+import { loadStats } from "#lib/stats";
 import { systemDesign, systemFlow, systemGroupIcon } from "#constants/content";
 import { windowTitles, sysDesignCopy } from "#constants/ui";
+
+import GitHubHeatmap from "./GitHubHeatmap";
 
 const groups = [...new Set(systemDesign.map((s) => s.group))];
 
 const SystemDesign = () => {
   const [active, setActive] = useState(null);
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    loadStats().then(setStats);
+  }, []);
 
   return (
     <WindowFrame windowKey="sysdesign" title={windowTitles.sysdesign} icon={<Lucide name="network" size={13} />}>
@@ -91,6 +99,10 @@ const SystemDesign = () => {
               </AnimatePresence>
             </motion.button>
           ))}
+        </div>
+
+        <div className="mt-6">
+          <GitHubHeatmap github={stats?.github} loading={!stats} />
         </div>
       </div>
     </WindowFrame>

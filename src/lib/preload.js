@@ -11,7 +11,7 @@ const WINDOW_LOADERS = [
   () => import("#windows/Contact"),
   () => import("#windows/Skills"),
   () => import("#windows/cp/CP"),
-  () => import("#windows/SystemDesign"),
+  () => import("#windows/dev/SystemDesign"),
   () => import("#windows/Achievements"),
   () => import("#windows/Resume"),
 ];
