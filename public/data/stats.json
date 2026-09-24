@@ -1,11 +1,11 @@
 {
   "codeforces": {
     "handle": "Pratham2123",
-    "rating": 1270,
-    "maxRating": 1277,
+    "rating": 1287,
+    "maxRating": 1287,
     "rank": "pupil",
     "maxRank": "pupil",
-    "contests": 39,
+    "contests": 40,
     "history": [
       {
         "contestId": 2137,
@@ -357,9 +357,141 @@
         "newRating": 1270,
         "change": 24,
         "rank": 3596
+      },
+      {
+        "contestId": 2266,
+        "contestName": "Codeforces Round 1122 (Div. 3)",
+        "date": 1790010300000,
+        "oldRating": 1270,
+        "newRating": 1287,
+        "change": 17,
+        "rank": 3874
       }
     ],
     "solvedProblems": [
+      {
+        "key": "2125-C",
+        "contestId": 2125,
+        "index": "C",
+        "name": "Count Good Numbers",
+        "rating": 1100,
+        "tags": [
+          "bitmasks",
+          "combinatorics",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1790156241,
+        "date": "2026-09-23"
+      },
+      {
+        "key": "2125-B",
+        "contestId": 2125,
+        "index": "B",
+        "name": "Left and Down",
+        "rating": 900,
+        "tags": [
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1790152874,
+        "date": "2026-09-23"
+      },
+      {
+        "key": "2125-A",
+        "contestId": 2125,
+        "index": "A",
+        "name": "Difficult Contest",
+        "rating": 800,
+        "tags": [
+          "constructive algorithms",
+          "implementation",
+          "sortings",
+          "strings"
+        ],
+        "timestamp": 1790151908,
+        "date": "2026-09-23"
+      },
+      {
+        "key": "1881-E",
+        "contestId": 1881,
+        "index": "E",
+        "name": "Block Sequence",
+        "rating": 1500,
+        "tags": [
+          "dp"
+        ],
+        "timestamp": 1790095160,
+        "date": "2026-09-22"
+      },
+      {
+        "key": "2266-D",
+        "contestId": 2266,
+        "index": "D",
+        "name": "Falling Concrete",
+        "rating": null,
+        "tags": [
+          "constructive algorithms",
+          "data structures",
+          "math",
+          "sortings"
+        ],
+        "timestamp": 1790012670,
+        "date": "2026-09-21"
+      },
+      {
+        "key": "2266-E",
+        "contestId": 2266,
+        "index": "E",
+        "name": "Prime Destruction",
+        "rating": null,
+        "tags": [
+          "dp",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1790008733,
+        "date": "2026-09-21"
+      },
+      {
+        "key": "2266-C",
+        "contestId": 2266,
+        "index": "C",
+        "name": "AND, OR, Sort!",
+        "rating": null,
+        "tags": [
+          "greedy",
+          "strings"
+        ],
+        "timestamp": 1790004202,
+        "date": "2026-09-21"
+      },
+      {
+        "key": "2266-B",
+        "contestId": 2266,
+        "index": "B",
+        "name": "Three Piles",
+        "rating": null,
+        "tags": [
+          "games",
+          "greedy",
+          "math"
+        ],
+        "timestamp": 1790001876,
+        "date": "2026-09-21"
+      },
+      {
+        "key": "2266-A",
+        "contestId": 2266,
+        "index": "A",
+        "name": "Good Contest",
+        "rating": null,
+        "tags": [
+          "greedy"
+        ],
+        "timestamp": 1790001565,
+        "date": "2026-09-21"
+      },
       {
         "key": "2032-C",
         "contestId": 2032,
@@ -450,7 +582,7 @@
         "contestId": 2264,
         "index": "C",
         "name": "Madamant's Skating Dynasty",
-        "rating": 1300,
+        "rating": 1400,
         "tags": [
           "combinatorics",
           "math",
@@ -3244,7 +3376,7 @@
         "contestId": 2232,
         "index": "C2",
         "name": "Seating Arrangement (Hard Version)",
-        "rating": 1500,
+        "rating": 1600,
         "tags": [
           "binary search",
           "greedy",
@@ -7321,6 +7453,9 @@
       }
     ],
     "activity": {
+      "2026-09-23": 3,
+      "2026-09-22": 1,
+      "2026-09-21": 5,
       "2026-09-20": 1,
       "2026-09-19": 1,
       "2026-09-18": 3,
@@ -7562,7 +7697,7 @@
   },
   "codechef": {
     "handle": "generous_hand",
-    "rating": 1500,
+    "rating": 1468,
     "maxRating": 1503,
     "stars": 2
   },
@@ -7576,93 +7711,17 @@
   "github": {
     "handle": "Pratham21223",
     "repos": 19,
-    "stars": 2,
-    "followers": 7,
-    "contributions": 200,
-    "activity": {
-      "2026-02-04": 1,
-      "2026-02-05": 7,
-      "2026-02-06": 1,
-      "2026-02-07": 2,
-      "2026-02-08": 3,
-      "2026-02-09": 2,
-      "2026-02-13": 1,
-      "2026-02-14": 3,
-      "2026-02-21": 3,
-      "2026-02-22": 12,
-      "2026-02-24": 2,
-      "2026-02-25": 1,
-      "2026-02-28": 7,
-      "2026-03-01": 1,
-      "2026-03-09": 1,
-      "2026-03-11": 2,
-      "2026-03-13": 1,
-      "2026-03-20": 1,
-      "2026-03-24": 1,
-      "2026-03-26": 1,
-      "2026-04-02": 3,
-      "2026-04-03": 2,
-      "2026-04-05": 9,
-      "2026-04-06": 3,
-      "2026-04-08": 2,
-      "2026-04-23": 1,
-      "2026-05-07": 1,
-      "2026-06-11": 1,
-      "2026-06-13": 6,
-      "2026-06-14": 7,
-      "2026-06-15": 2,
-      "2026-07-23": 2,
-      "2026-08-16": 1,
-      "2026-08-27": 14,
-      "2026-09-01": 3,
-      "2026-09-02": 12,
-      "2026-09-08": 2,
-      "2026-09-12": 1,
-      "2026-09-13": 3,
-      "2026-09-16": 3,
-      "2026-09-17": 6,
-      "2026-09-18": 4,
-      "2026-09-19": 7,
-      "2026-09-20": 2,
-      "2025-08-06": 3,
-      "2025-08-07": 14,
-      "2025-08-09": 1,
-      "2025-08-14": 6,
-      "2025-08-16": 15,
-      "2025-08-17": 3,
-      "2025-09-10": 3,
-      "2025-09-28": 6,
-      "2025-10-08": 3,
-      "2025-10-12": 3,
-      "2025-10-18": 2,
-      "2025-10-26": 1,
-      "2025-10-30": 1,
-      "2025-11-02": 9,
-      "2025-11-04": 1,
-      "2025-11-10": 3,
-      "2025-11-22": 7,
-      "2025-12-06": 1,
-      "2025-12-14": 1,
-      "2025-12-15": 3,
-      "2025-12-16": 5,
-      "2025-12-17": 1,
-      "2025-12-23": 2,
-      "2025-12-25": 1,
-      "2022-01-12": 1
-    },
-    "years": [
-      2026,
-      2025,
-      2024,
-      2023,
-      2022
-    ]
+    "stars": 3,
+    "followers": 8,
+    "contributions": 0,
+    "activity": {},
+    "years": []
   },
   "static": {
-    "problemsSolved": 513,
+    "problemsSolved": 522,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-20T10:14:34.824Z"
+  "updatedAt": "2026-09-24T14:11:16.637Z"
 }

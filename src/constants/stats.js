@@ -1,10 +1,12 @@
+import stats from "../../public/data/stats.json";
+
 export const fallbackStats = {
   codeforces: {
     handle: "Pratham2123",
-    rating: 1277,
-    maxRating: 1277,
-    rank: "Pupil",
-    maxRank: "Pupil",
+    rating: stats.codeforces.rating,
+    maxRating: stats.codeforces.maxRating,
+    rank: stats.codeforces.rank,
+    maxRank: stats.codeforces.maxRank,
     contests: 12,
     solved: 0,
     history: [
@@ -18,23 +20,23 @@ export const fallbackStats = {
   },
   codechef: {
     handle: "generous_hand",
-    rating: 1503,
-    maxRating: 1503,
-    stars: 2,
+    rating: stats.codechef.rating,
+    maxRating: stats.codechef.maxRating,
+    stars: stats.codechef.stars,
   },
   leetcode: {
     handle: "Pratham3004",
-    solved: 600,
-    easy: 210,
-    medium: 300,
-    hard: 90,
+    solved: stats.leetcode.solved,
+    easy: stats.leetcode.easy,
+    medium: stats.leetcode.medium,
+    hard: stats.leetcode.hard,
   },
   github: {
     handle: "Pratham21223",
-    repos: 18,
-    stars: 24,
-    contributions: 0,
-    followers: 12,
+    repos: stats.github.repos,
+    stars: stats.github.stars,
+    contributions: stats.github.contributions,
+    followers: stats.github.followers,
   },
   static: {
     problemsSolved: 600,

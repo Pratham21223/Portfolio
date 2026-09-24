@@ -199,6 +199,7 @@ export const projects = [
     ],
     links: {
       github: "https://github.com/Pratham21223/MahalaxmiGems",
+      demo : "https://mahalaxmi-gems.vercel.app",
     },
     accent: "from-yellow-500 via-amber-500 to-orange-500",
   },
@@ -496,7 +497,7 @@ export const heroCode = `
   const role : "Problem Solver",
   const interests: { "CP", "System Design", "RAG", "LLMs" },
   const ratings = { cf: "${fallbackStats.codeforces.maxRating}", cc: "${fallbackStats.codechef.maxRating}" };
-  const beyondCode = { "Spirituality","Cricket" };
+  const beyondCode = { "Spirituality","Cricket","Reading" };
 
   const mantra = "Eat. Sleep. Code. Repeat." ;)
   // Ready to build something extraordinary.`;
