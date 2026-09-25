@@ -334,6 +334,15 @@ const github = async () => {
 /* =========================================================
    MAIN
 ========================================================= */
+const DEFAULTS = {
+  codeforces: {
+    handle: CF_HANDLE, rating: 0, maxRating: 0, rank: "unrated", maxRank: "unrated",
+    contests: 0, history: [], solvedProblems: [], activity: {}, years: [],
+  },
+  codechef: { handle: CC_HANDLE, rating: 0, maxRating: 0, stars: 0 },
+  leetcode: { handle: LC_HANDLE, solved: 0, easy: 0, medium: 0, hard: 0 },
+  github: { handle: GH_HANDLE, repos: 0, stars: 0, followers: 0, contributions: 0, activity: {}, years: [] },
+};
 
 const main = async () => {
   const out = {};
@@ -349,6 +358,7 @@ const main = async () => {
       const message = err instanceof Error ? err.message : String(err);
       errors.push(`${name}: ${message}`);
       console.error(`✗ ${name}: ${message}`);
+      out[name] = DEFAULTS[name];
     }
   }
 
