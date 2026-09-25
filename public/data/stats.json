@@ -1,11 +1,11 @@
 {
   "codeforces": {
     "handle": "Pratham2123",
-    "rating": 1287,
-    "maxRating": 1287,
+    "rating": 1307,
+    "maxRating": 1307,
     "rank": "pupil",
     "maxRank": "pupil",
-    "contests": 40,
+    "contests": 41,
     "history": [
       {
         "contestId": 2137,
@@ -366,9 +366,88 @@
         "newRating": 1287,
         "change": 17,
         "rank": 3874
+      },
+      {
+        "contestId": 2267,
+        "contestName": "Codeforces Round 1123 (Div. 2)",
+        "date": 1790355000000,
+        "oldRating": 1287,
+        "newRating": 1307,
+        "change": 20,
+        "rank": 3850
       }
     ],
     "solvedProblems": [
+      {
+        "key": "2267-C",
+        "contestId": 2267,
+        "index": "C",
+        "name": "GCD Treasury",
+        "rating": null,
+        "tags": [
+          "greedy",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1790354200,
+        "date": "2026-09-25"
+      },
+      {
+        "key": "2267-F1",
+        "contestId": 2267,
+        "index": "F1",
+        "name": "XOR Transformations (Easy Version)",
+        "rating": null,
+        "tags": [
+          "bitmasks",
+          "brute force",
+          "implementation",
+          "sortings"
+        ],
+        "timestamp": 1790350888,
+        "date": "2026-09-25"
+      },
+      {
+        "key": "2267-B",
+        "contestId": 2267,
+        "index": "B",
+        "name": "Fashionable Array",
+        "rating": null,
+        "tags": [
+          "brute force",
+          "constructive algorithms",
+          "sortings"
+        ],
+        "timestamp": 1790347545,
+        "date": "2026-09-25"
+      },
+      {
+        "key": "2267-A",
+        "contestId": 2267,
+        "index": "A",
+        "name": "Turn Into a Palindrome",
+        "rating": null,
+        "tags": [
+          "strings"
+        ],
+        "timestamp": 1790347052,
+        "date": "2026-09-25"
+      },
+      {
+        "key": "1872-E",
+        "contestId": 1872,
+        "index": "E",
+        "name": "Data Structures Fan",
+        "rating": 1500,
+        "tags": [
+          "binary search",
+          "bitmasks",
+          "data structures",
+          "dp"
+        ],
+        "timestamp": 1790346320,
+        "date": "2026-09-25"
+      },
       {
         "key": "2119-B",
         "contestId": 2119,
@@ -7481,6 +7560,7 @@
       }
     ],
     "activity": {
+      "2026-09-25": 5,
       "2026-09-24": 2,
       "2026-09-23": 3,
       "2026-09-22": 1,
@@ -7826,10 +7906,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 524,
+    "problemsSolved": 529,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-25T13:04:58.901Z"
+  "updatedAt": "2026-09-25T21:43:44.580Z"
 }
