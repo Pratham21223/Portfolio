@@ -379,6 +379,31 @@
     ],
     "solvedProblems": [
       {
+        "key": "2269-D",
+        "contestId": 2269,
+        "index": "D",
+        "name": "What a SauSaGe! It's All Meat",
+        "rating": null,
+        "tags": [
+          "bitmasks"
+        ],
+        "timestamp": 1790496649,
+        "date": "2026-09-27"
+      },
+      {
+        "key": "2269-C",
+        "contestId": 2269,
+        "index": "C",
+        "name": "K Is Important",
+        "rating": null,
+        "tags": [
+          "constructive algorithms",
+          "greedy"
+        ],
+        "timestamp": 1790492854,
+        "date": "2026-09-27"
+      },
+      {
         "key": "1795-C",
         "contestId": 1795,
         "index": "C",
@@ -7592,6 +7617,7 @@
       }
     ],
     "activity": {
+      "2026-09-27": 2,
       "2026-09-26": 2,
       "2026-09-25": 5,
       "2026-09-24": 2,
@@ -7939,10 +7965,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 531,
+    "problemsSolved": 533,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-26T21:20:08.259Z"
+  "updatedAt": "2026-09-27T21:29:46.959Z"
 }
