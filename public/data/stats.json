@@ -398,7 +398,8 @@
         "rating": null,
         "tags": [
           "constructive algorithms",
-          "greedy"
+          "greedy",
+          "two pointers"
         ],
         "timestamp": 1790492854,
         "date": "2026-09-27"
@@ -7970,5 +7971,5 @@
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-27T21:29:46.959Z"
+  "updatedAt": "2026-09-28T23:24:41.855Z"
 }
