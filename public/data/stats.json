@@ -379,13 +379,42 @@
     ],
     "solvedProblems": [
       {
+        "key": "1673-C",
+        "contestId": 1673,
+        "index": "C",
+        "name": "Palindrome Basis",
+        "rating": 1500,
+        "tags": [
+          "brute force",
+          "dp",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1790688272,
+        "date": "2026-09-29"
+      },
+      {
+        "key": "1776-L",
+        "contestId": 1776,
+        "index": "L",
+        "name": "Controllers",
+        "rating": 1500,
+        "tags": [
+          "binary search",
+          "math"
+        ],
+        "timestamp": 1790684626,
+        "date": "2026-09-29"
+      },
+      {
         "key": "2269-D",
         "contestId": 2269,
         "index": "D",
         "name": "What a SauSaGe! It's All Meat",
         "rating": null,
         "tags": [
-          "bitmasks"
+          "bitmasks",
+          "greedy"
         ],
         "timestamp": 1790496649,
         "date": "2026-09-27"
@@ -7618,6 +7647,7 @@
       }
     ],
     "activity": {
+      "2026-09-29": 2,
       "2026-09-27": 2,
       "2026-09-26": 2,
       "2026-09-25": 5,
@@ -7872,9 +7902,9 @@
   },
   "leetcode": {
     "handle": "Pratham3004",
-    "solved": 60,
+    "solved": 61,
     "easy": 37,
-    "medium": 21,
+    "medium": 22,
     "hard": 2
   },
   "github": {
@@ -7882,7 +7912,7 @@
     "repos": 19,
     "stars": 3,
     "followers": 8,
-    "contributions": 214,
+    "contributions": 208,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -7966,10 +7996,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 533,
+    "problemsSolved": 535,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-28T23:24:41.855Z"
+  "updatedAt": "2026-09-29T22:27:34.759Z"
 }
