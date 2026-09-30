@@ -379,6 +379,31 @@
     ],
     "solvedProblems": [
       {
+        "key": "2130-B",
+        "contestId": 2130,
+        "index": "B",
+        "name": "Pathless",
+        "rating": 1100,
+        "tags": [
+          "constructive algorithms"
+        ],
+        "timestamp": 1790763124,
+        "date": "2026-09-30"
+      },
+      {
+        "key": "2130-A",
+        "contestId": 2130,
+        "index": "A",
+        "name": "Submission is All You Need",
+        "rating": 800,
+        "tags": [
+          "greedy",
+          "math"
+        ],
+        "timestamp": 1790755027,
+        "date": "2026-09-30"
+      },
+      {
         "key": "1673-C",
         "contestId": 1673,
         "index": "C",
@@ -7647,6 +7672,7 @@
       }
     ],
     "activity": {
+      "2026-09-30": 2,
       "2026-09-29": 2,
       "2026-09-27": 2,
       "2026-09-26": 2,
@@ -7896,7 +7922,7 @@
   },
   "codechef": {
     "handle": "generous_hand",
-    "rating": 1468,
+    "rating": 1501,
     "maxRating": 1503,
     "stars": 2
   },
@@ -7996,10 +8022,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 535,
+    "problemsSolved": 537,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-29T22:27:34.759Z"
+  "updatedAt": "2026-09-30T22:26:41.689Z"
 }
