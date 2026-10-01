@@ -436,7 +436,7 @@
         "contestId": 2269,
         "index": "D",
         "name": "What a SauSaGe! It's All Meat",
-        "rating": null,
+        "rating": 1500,
         "tags": [
           "bitmasks",
           "greedy"
@@ -449,7 +449,7 @@
         "contestId": 2269,
         "index": "C",
         "name": "K Is Important",
-        "rating": null,
+        "rating": 1200,
         "tags": [
           "constructive algorithms",
           "greedy",
@@ -477,7 +477,7 @@
         "contestId": 2267,
         "index": "D",
         "name": "Backrooms Hill",
-        "rating": null,
+        "rating": 1400,
         "tags": [
           "constructive algorithms",
           "dp",
@@ -493,7 +493,7 @@
         "contestId": 2267,
         "index": "C",
         "name": "GCD Treasury",
-        "rating": null,
+        "rating": 1200,
         "tags": [
           "greedy",
           "math",
@@ -507,7 +507,7 @@
         "contestId": 2267,
         "index": "F1",
         "name": "XOR Transformations (Easy Version)",
-        "rating": null,
+        "rating": 1700,
         "tags": [
           "bitmasks",
           "brute force",
@@ -522,7 +522,7 @@
         "contestId": 2267,
         "index": "B",
         "name": "Fashionable Array",
-        "rating": null,
+        "rating": 800,
         "tags": [
           "brute force",
           "constructive algorithms",
@@ -536,7 +536,7 @@
         "contestId": 2267,
         "index": "A",
         "name": "Turn Into a Palindrome",
-        "rating": null,
+        "rating": 800,
         "tags": [
           "greedy",
           "strings"
@@ -647,7 +647,7 @@
         "contestId": 2266,
         "index": "D",
         "name": "Falling Concrete",
-        "rating": null,
+        "rating": 1400,
         "tags": [
           "constructive algorithms",
           "data structures",
@@ -662,7 +662,7 @@
         "contestId": 2266,
         "index": "E",
         "name": "Prime Destruction",
-        "rating": null,
+        "rating": 1400,
         "tags": [
           "brute force",
           "dp",
@@ -677,7 +677,7 @@
         "contestId": 2266,
         "index": "C",
         "name": "AND, OR, Sort!",
-        "rating": null,
+        "rating": 1000,
         "tags": [
           "greedy",
           "strings"
@@ -690,7 +690,7 @@
         "contestId": 2266,
         "index": "B",
         "name": "Three Piles",
-        "rating": null,
+        "rating": 800,
         "tags": [
           "games",
           "greedy",
@@ -704,7 +704,7 @@
         "contestId": 2266,
         "index": "A",
         "name": "Good Contest",
-        "rating": null,
+        "rating": 800,
         "tags": [
           "greedy"
         ],
@@ -8027,5 +8027,5 @@
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-09-30T22:26:41.689Z"
+  "updatedAt": "2026-10-01T22:48:51.622Z"
 }
