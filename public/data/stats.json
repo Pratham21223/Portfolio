@@ -379,6 +379,23 @@
     ],
     "solvedProblems": [
       {
+        "key": "1659-C",
+        "contestId": 1659,
+        "index": "C",
+        "name": "Line Empire",
+        "rating": 1500,
+        "tags": [
+          "binary search",
+          "brute force",
+          "dp",
+          "greedy",
+          "implementation",
+          "math"
+        ],
+        "timestamp": 1790920523,
+        "date": "2026-10-02"
+      },
+      {
         "key": "2130-B",
         "contestId": 2130,
         "index": "B",
@@ -7672,6 +7689,7 @@
       }
     ],
     "activity": {
+      "2026-10-02": 1,
       "2026-09-30": 2,
       "2026-09-29": 2,
       "2026-09-27": 2,
@@ -8022,10 +8040,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 537,
+    "problemsSolved": 538,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-01T22:48:51.622Z"
+  "updatedAt": "2026-10-02T22:24:17.107Z"
 }
