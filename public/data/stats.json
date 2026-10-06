@@ -379,6 +379,22 @@
     ],
     "solvedProblems": [
       {
+        "key": "1646-C",
+        "contestId": 1646,
+        "index": "C",
+        "name": "Factorials and Powers of Two",
+        "rating": 1500,
+        "tags": [
+          "bitmasks",
+          "brute force",
+          "constructive algorithms",
+          "dp",
+          "math"
+        ],
+        "timestamp": 1791298426,
+        "date": "2026-10-06"
+      },
+      {
         "key": "2269-B",
         "contestId": 2269,
         "index": "B",
@@ -7744,6 +7760,7 @@
       }
     ],
     "activity": {
+      "2026-10-06": 1,
       "2026-10-05": 1,
       "2026-10-04": 2,
       "2026-10-03": 1,
@@ -8098,10 +8115,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 542,
+    "problemsSolved": 543,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-06T00:12:45.068Z"
+  "updatedAt": "2026-10-06T22:43:22.756Z"
 }
