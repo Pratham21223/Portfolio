@@ -379,6 +379,21 @@
     ],
     "solvedProblems": [
       {
+        "key": "1516-B",
+        "contestId": 1516,
+        "index": "B",
+        "name": "AGAGA XOOORRR",
+        "rating": 1500,
+        "tags": [
+          "bitmasks",
+          "brute force",
+          "dp",
+          "greedy"
+        ],
+        "timestamp": 1791354064,
+        "date": "2026-10-07"
+      },
+      {
         "key": "1646-C",
         "contestId": 1646,
         "index": "C",
@@ -7760,6 +7775,7 @@
       }
     ],
     "activity": {
+      "2026-10-07": 1,
       "2026-10-06": 1,
       "2026-10-05": 1,
       "2026-10-04": 2,
@@ -8028,10 +8044,10 @@
   },
   "github": {
     "handle": "Pratham21223",
-    "repos": 19,
+    "repos": 20,
     "stars": 3,
     "followers": 8,
-    "contributions": 208,
+    "contributions": 211,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -8080,6 +8096,7 @@
       "2026-09-23": 3,
       "2026-09-24": 1,
       "2026-09-25": 2,
+      "2026-10-07": 3,
       "2025-08-06": 3,
       "2025-08-07": 14,
       "2025-08-09": 1,
@@ -8115,10 +8132,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 543,
+    "problemsSolved": 544,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-06T22:43:22.756Z"
+  "updatedAt": "2026-10-07T23:13:28.529Z"
 }
