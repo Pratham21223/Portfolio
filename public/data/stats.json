@@ -379,6 +379,34 @@
     ],
     "solvedProblems": [
       {
+        "key": "2275-D",
+        "contestId": 2275,
+        "index": "D",
+        "name": "Precision Alignment",
+        "rating": null,
+        "tags": [
+          "binary search",
+          "brute force",
+          "greedy",
+          "implementation"
+        ],
+        "timestamp": 1791472352,
+        "date": "2026-10-08"
+      },
+      {
+        "key": "2275-C",
+        "contestId": 2275,
+        "index": "C",
+        "name": "Unrequited Love",
+        "rating": null,
+        "tags": [
+          "brute force",
+          "data structures"
+        ],
+        "timestamp": 1791465630,
+        "date": "2026-10-08"
+      },
+      {
         "key": "1516-B",
         "contestId": 1516,
         "index": "B",
@@ -7775,6 +7803,7 @@
       }
     ],
     "activity": {
+      "2026-10-08": 2,
       "2026-10-07": 1,
       "2026-10-06": 1,
       "2026-10-05": 1,
@@ -8046,7 +8075,7 @@
     "handle": "Pratham21223",
     "repos": 20,
     "stars": 3,
-    "followers": 8,
+    "followers": 9,
     "contributions": 211,
     "activity": {
       "2026-02-04": 1,
@@ -8132,10 +8161,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 544,
+    "problemsSolved": 546,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-07T23:13:28.529Z"
+  "updatedAt": "2026-10-08T23:28:55.888Z"
 }
