@@ -379,6 +379,21 @@
     ],
     "solvedProblems": [
       {
+        "key": "1486-B",
+        "contestId": 1486,
+        "index": "B",
+        "name": "Eastern Exhibition",
+        "rating": 1500,
+        "tags": [
+          "binary search",
+          "geometry",
+          "shortest paths",
+          "sortings"
+        ],
+        "timestamp": 1791566422,
+        "date": "2026-10-09"
+      },
+      {
         "key": "2275-D",
         "contestId": 2275,
         "index": "D",
@@ -7803,6 +7818,7 @@
       }
     ],
     "activity": {
+      "2026-10-09": 1,
       "2026-10-08": 2,
       "2026-10-07": 1,
       "2026-10-06": 1,
@@ -8075,8 +8091,8 @@
     "handle": "Pratham21223",
     "repos": 20,
     "stars": 3,
-    "followers": 9,
-    "contributions": 211,
+    "followers": 10,
+    "contributions": 208,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -8161,10 +8177,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 546,
+    "problemsSolved": 547,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-08T23:28:55.888Z"
+  "updatedAt": "2026-10-09T22:46:50.475Z"
 }
