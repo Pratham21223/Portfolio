@@ -1,11 +1,11 @@
 {
   "codeforces": {
     "handle": "Pratham2123",
-    "rating": 1307,
+    "rating": 1294,
     "maxRating": 1307,
     "rank": "pupil",
     "maxRank": "pupil",
-    "contests": 41,
+    "contests": 42,
     "history": [
       {
         "contestId": 2137,
@@ -375,9 +375,43 @@
         "newRating": 1307,
         "change": 20,
         "rank": 3850
+      },
+      {
+        "contestId": 2271,
+        "contestName": "DeepInfra Round 1 (Codeforces Round 1126, Div. 1 + Div. 2)",
+        "date": 1791655500000,
+        "oldRating": 1307,
+        "newRating": 1294,
+        "change": -13,
+        "rank": 4649
       }
     ],
     "solvedProblems": [
+      {
+        "key": "2271-B",
+        "contestId": 2271,
+        "index": "B",
+        "name": "MEX Game",
+        "rating": null,
+        "tags": [
+          "games"
+        ],
+        "timestamp": 1791646988,
+        "date": "2026-10-10"
+      },
+      {
+        "key": "2271-A",
+        "contestId": 2271,
+        "index": "A",
+        "name": "Robot Odd Moves",
+        "rating": null,
+        "tags": [
+          "constructive algorithms",
+          "math"
+        ],
+        "timestamp": 1791645418,
+        "date": "2026-10-10"
+      },
       {
         "key": "1486-B",
         "contestId": 1486,
@@ -7818,6 +7852,7 @@
       }
     ],
     "activity": {
+      "2026-10-10": 2,
       "2026-10-09": 1,
       "2026-10-08": 2,
       "2026-10-07": 1,
@@ -8177,10 +8212,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 547,
+    "problemsSolved": 549,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-09T22:46:50.475Z"
+  "updatedAt": "2026-10-10T21:54:04.956Z"
 }
