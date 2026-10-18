@@ -423,6 +423,9 @@
         "name": "The Projections of Paco",
         "rating": null,
         "tags": [
+          "dfs and similar",
+          "dp",
+          "hashing",
           "implementation",
           "math"
         ],
@@ -8277,5 +8280,5 @@
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-17T20:46:27.882Z"
+  "updatedAt": "2026-10-18T20:55:46.615Z"
 }
