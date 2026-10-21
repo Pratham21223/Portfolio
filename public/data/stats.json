@@ -8173,9 +8173,9 @@
   },
   "codechef": {
     "handle": "generous_hand",
-    "rating": 1501,
-    "maxRating": 1503,
-    "stars": 2
+    "rating": 0,
+    "maxRating": 0,
+    "stars": 0
   },
   "leetcode": {
     "handle": "Pratham3004",
@@ -8281,5 +8281,5 @@
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-20T21:46:01.408Z"
+  "updatedAt": "2026-10-21T21:52:09.169Z"
 }
