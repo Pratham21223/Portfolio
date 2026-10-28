@@ -397,6 +397,21 @@
     ],
     "solvedProblems": [
       {
+        "key": "2272-D",
+        "contestId": 2272,
+        "index": "D",
+        "name": "Connecting the Conflicts",
+        "rating": null,
+        "tags": [
+          "brute force",
+          "constructive algorithms",
+          "dfs and similar",
+          "dp"
+        ],
+        "timestamp": 1793165450,
+        "date": "2026-10-28"
+      },
+      {
         "key": "2272-C",
         "contestId": 2272,
         "index": "C",
@@ -404,6 +419,7 @@
         "rating": null,
         "tags": [
           "binary search",
+          "constructive algorithms",
           "dp"
         ],
         "timestamp": 1793094498,
@@ -430,6 +446,7 @@
         "rating": null,
         "tags": [
           "brute force",
+          "constructive algorithms",
           "greedy"
         ],
         "timestamp": 1793026190,
@@ -7984,6 +8001,7 @@
       }
     ],
     "activity": {
+      "2026-10-28": 1,
       "2026-10-27": 1,
       "2026-10-26": 2,
       "2026-10-24": 2,
@@ -8250,7 +8268,7 @@
   },
   "codechef": {
     "handle": "generous_hand",
-    "rating": 1501,
+    "rating": 1489,
     "maxRating": 1503,
     "stars": 2
   },
@@ -8263,10 +8281,10 @@
   },
   "github": {
     "handle": "Pratham21223",
-    "repos": 22,
+    "repos": 21,
     "stars": 3,
     "followers": 12,
-    "contributions": 206,
+    "contributions": 205,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -8315,9 +8333,9 @@
       "2026-09-23": 3,
       "2026-09-24": 1,
       "2026-09-25": 2,
-      "2026-10-07": 3,
       "2026-10-14": 2,
       "2026-10-21": 2,
+      "2026-10-28": 2,
       "2025-08-06": 3,
       "2025-08-07": 14,
       "2025-08-09": 1,
@@ -8353,10 +8371,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 558,
+    "problemsSolved": 559,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-10-27T22:27:22.650Z"
+  "updatedAt": "2026-10-28T22:44:15.448Z"
 }
