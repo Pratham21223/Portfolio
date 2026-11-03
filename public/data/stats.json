@@ -406,6 +406,34 @@
     ],
     "solvedProblems": [
       {
+        "key": "1418-C",
+        "contestId": 1418,
+        "index": "C",
+        "name": "Mortal Kombat Tower",
+        "rating": 1500,
+        "tags": [
+          "dp",
+          "graphs",
+          "greedy",
+          "shortest paths"
+        ],
+        "timestamp": 1793601815,
+        "date": "2026-11-02"
+      },
+      {
+        "key": "2278-E",
+        "contestId": 2278,
+        "index": "E",
+        "name": "Swap and Negate",
+        "rating": null,
+        "tags": [
+          "constructive algorithms",
+          "greedy"
+        ],
+        "timestamp": 1793597098,
+        "date": "2026-11-02"
+      },
+      {
         "key": "2278-A",
         "contestId": 2278,
         "index": "A",
@@ -8062,6 +8090,7 @@
       }
     ],
     "activity": {
+      "2026-11-02": 2,
       "2026-11-01": 2,
       "2026-10-31": 2,
       "2026-10-28": 1,
@@ -8337,17 +8366,17 @@
   },
   "leetcode": {
     "handle": "Pratham3004",
-    "solved": 61,
-    "easy": 37,
-    "medium": 22,
-    "hard": 2
+    "solved": 0,
+    "easy": 0,
+    "medium": 0,
+    "hard": 0
   },
   "github": {
     "handle": "Pratham21223",
     "repos": 21,
     "stars": 3,
     "followers": 11,
-    "contributions": 209,
+    "contributions": 200,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -8435,10 +8464,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 563,
+    "problemsSolved": 565,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-11-01T22:14:05.917Z"
+  "updatedAt": "2026-11-03T01:06:47.003Z"
 }
