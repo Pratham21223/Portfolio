@@ -1,11 +1,11 @@
 {
   "codeforces": {
     "handle": "Pratham2123",
-    "rating": 1211,
+    "rating": 1232,
     "maxRating": 1317,
     "rank": "pupil",
     "maxRank": "pupil",
-    "contests": 44,
+    "contests": 45,
     "history": [
       {
         "contestId": 2137,
@@ -402,9 +402,31 @@
         "newRating": 1211,
         "change": -86,
         "rank": 9678
+      },
+      {
+        "contestId": 2283,
+        "contestName": "Educational Codeforces Round 196 (Rated for Div. 2)",
+        "date": 1793810700000,
+        "oldRating": 1211,
+        "newRating": 1232,
+        "change": 21,
+        "rank": 3538
       }
     ],
     "solvedProblems": [
+      {
+        "key": "1338-A",
+        "contestId": 1338,
+        "index": "A",
+        "name": "Powered Addition",
+        "rating": 1500,
+        "tags": [
+          "greedy",
+          "math"
+        ],
+        "timestamp": 1793889233,
+        "date": "2026-11-05"
+      },
       {
         "key": "2283-C",
         "contestId": 2283,
@@ -438,8 +460,9 @@
         "name": "Numbers on the Board",
         "rating": null,
         "tags": [
-          "brute force",
-          "greedy"
+          "greedy",
+          "math",
+          "two pointers"
         ],
         "timestamp": 1793804101,
         "date": "2026-11-04"
@@ -8142,6 +8165,7 @@
       }
     ],
     "activity": {
+      "2026-11-05": 1,
       "2026-11-04": 3,
       "2026-11-03": 1,
       "2026-11-02": 2,
@@ -8427,10 +8451,10 @@
   },
   "github": {
     "handle": "Pratham21223",
-    "repos": 23,
+    "repos": 24,
     "stars": 3,
     "followers": 11,
-    "contributions": 208,
+    "contributions": 209,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -8484,6 +8508,7 @@
       "2026-10-28": 2,
       "2026-11-01": 3,
       "2026-11-04": 8,
+      "2026-11-05": 2,
       "2025-08-06": 3,
       "2025-08-07": 14,
       "2025-08-09": 1,
@@ -8519,10 +8544,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 569,
+    "problemsSolved": 570,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-11-04T23:48:55.133Z"
+  "updatedAt": "2026-11-05T23:44:59.146Z"
 }
