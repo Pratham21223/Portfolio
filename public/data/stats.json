@@ -1,11 +1,11 @@
 {
   "codeforces": {
     "handle": "Pratham2123",
-    "rating": 1232,
+    "rating": 1285,
     "maxRating": 1317,
     "rank": "pupil",
     "maxRank": "pupil",
-    "contests": 45,
+    "contests": 46,
     "history": [
       {
         "contestId": 2137,
@@ -411,9 +411,75 @@
         "newRating": 1232,
         "change": 21,
         "rank": 3538
+      },
+      {
+        "contestId": 2284,
+        "contestName": "Codeforces Round 1132 (Div. 2)",
+        "date": 1793983800000,
+        "oldRating": 1232,
+        "newRating": 1285,
+        "change": 53,
+        "rank": 2384
       }
     ],
     "solvedProblems": [
+      {
+        "key": "2284-C1",
+        "contestId": 2284,
+        "index": "C1",
+        "name": "Disgusting + GCD (Constructive Version)",
+        "rating": null,
+        "tags": [
+          "constructive algorithms",
+          "dp",
+          "greedy",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1793980632,
+        "date": "2026-11-06"
+      },
+      {
+        "key": "2284-B",
+        "contestId": 2284,
+        "index": "B",
+        "name": "Introduction to the Niche Internet",
+        "rating": null,
+        "tags": [
+          "greedy",
+          "sortings"
+        ],
+        "timestamp": 1793978867,
+        "date": "2026-11-06"
+      },
+      {
+        "key": "2284-A2",
+        "contestId": 2284,
+        "index": "A2",
+        "name": "15K4JR3B (Hard Version)",
+        "rating": null,
+        "tags": [
+          "greedy",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1793977012,
+        "date": "2026-11-06"
+      },
+      {
+        "key": "2284-A1",
+        "contestId": 2284,
+        "index": "A1",
+        "name": "15K4JR3B (Easy Version)",
+        "rating": null,
+        "tags": [
+          "greedy",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1793975870,
+        "date": "2026-11-06"
+      },
       {
         "key": "1338-A",
         "contestId": 1338,
@@ -8165,6 +8231,7 @@
       }
     ],
     "activity": {
+      "2026-11-06": 4,
       "2026-11-05": 1,
       "2026-11-04": 3,
       "2026-11-03": 1,
@@ -8453,7 +8520,7 @@
     "handle": "Pratham21223",
     "repos": 24,
     "stars": 3,
-    "followers": 11,
+    "followers": 12,
     "contributions": 209,
     "activity": {
       "2026-02-04": 1,
@@ -8544,10 +8611,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 570,
+    "problemsSolved": 574,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-11-05T23:44:59.146Z"
+  "updatedAt": "2026-11-06T23:20:44.756Z"
 }
