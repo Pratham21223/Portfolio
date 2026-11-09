@@ -2,7 +2,7 @@ name: Refresh Stats
 
 on:
   schedule:
-    - cron: "30 18 * * *"  # Everyday at 12:00 AM IST
+    - cron: "30 18 * * 0"  # Every Sunday at 12:00 AM IST
   workflow_dispatch:
 
 permissions:
