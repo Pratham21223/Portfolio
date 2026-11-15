@@ -433,6 +433,106 @@
     ],
     "solvedProblems": [
       {
+        "key": "2285-C",
+        "contestId": 2285,
+        "index": "C",
+        "name": "Max Substitution",
+        "rating": null,
+        "tags": [
+          "data structures",
+          "math",
+          "sortings",
+          "two pointers"
+        ],
+        "timestamp": 1794766828,
+        "date": "2026-11-15"
+      },
+      {
+        "key": "2285-B",
+        "contestId": 2285,
+        "index": "B",
+        "name": "Diverse String",
+        "rating": null,
+        "tags": [
+          "combinatorics",
+          "strings"
+        ],
+        "timestamp": 1794764218,
+        "date": "2026-11-15"
+      },
+      {
+        "key": "2285-A",
+        "contestId": 2285,
+        "index": "A",
+        "name": "Composite Permutation",
+        "rating": null,
+        "tags": [
+          "constructive algorithms",
+          "math"
+        ],
+        "timestamp": 1794763935,
+        "date": "2026-11-15"
+      },
+      {
+        "key": "2290-B",
+        "contestId": 2290,
+        "index": "B",
+        "name": "Stubborn Pen",
+        "rating": null,
+        "tags": [
+          "implementation",
+          "strings"
+        ],
+        "timestamp": 1794507632,
+        "date": "2026-11-12"
+      },
+      {
+        "key": "2290-A",
+        "contestId": 2290,
+        "index": "A",
+        "name": "Three Piles",
+        "rating": null,
+        "tags": [
+          "implementation",
+          "math"
+        ],
+        "timestamp": 1794507349,
+        "date": "2026-11-12"
+      },
+      {
+        "key": "1332-C",
+        "contestId": 1332,
+        "index": "C",
+        "name": "K-Complete Word",
+        "rating": 1500,
+        "tags": [
+          "dfs and similar",
+          "dsu",
+          "greedy",
+          "implementation",
+          "strings"
+        ],
+        "timestamp": 1794316925,
+        "date": "2026-11-10"
+      },
+      {
+        "key": "2284-C2",
+        "contestId": 2284,
+        "index": "C2",
+        "name": "Disgusting + GCD (Checker Version)",
+        "rating": null,
+        "tags": [
+          "brute force",
+          "dp",
+          "graphs",
+          "greedy",
+          "math",
+          "number theory"
+        ],
+        "timestamp": 1794220205,
+        "date": "2026-11-09"
+      },
+      {
         "key": "2280-B",
         "contestId": 2280,
         "index": "B",
@@ -451,6 +551,7 @@
         "name": "Are They the Same?",
         "rating": null,
         "tags": [
+          "brute force",
           "implementation"
         ],
         "timestamp": 1794062591,
@@ -8266,6 +8367,10 @@
       }
     ],
     "activity": {
+      "2026-11-15": 3,
+      "2026-11-12": 2,
+      "2026-11-10": 1,
+      "2026-11-09": 1,
       "2026-11-07": 2,
       "2026-11-06": 4,
       "2026-11-05": 1,
@@ -8557,7 +8662,7 @@
     "repos": 24,
     "stars": 3,
     "followers": 12,
-    "contributions": 209,
+    "contributions": 212,
     "activity": {
       "2026-02-04": 1,
       "2026-02-05": 7,
@@ -8612,6 +8717,8 @@
       "2026-11-01": 3,
       "2026-11-04": 8,
       "2026-11-05": 2,
+      "2026-11-09": 3,
+      "2026-11-10": 3,
       "2025-08-06": 3,
       "2025-08-07": 14,
       "2025-08-09": 1,
@@ -8647,10 +8754,10 @@
     ]
   },
   "static": {
-    "problemsSolved": 576,
+    "problemsSolved": 583,
     "hackathons": 6,
     "projects": 3,
     "cgpa": 9.04
   },
-  "updatedAt": "2026-11-08T22:18:09.970Z"
+  "updatedAt": "2026-11-15T23:04:49.104Z"
 }
